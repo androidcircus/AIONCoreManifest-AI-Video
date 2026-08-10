@@ -1,0 +1,11 @@
+qemu-system-x86_64 \
+  -machine q35,accel=kvm \
+  -cpu host \
+  -smp 16,sockets=1,cores=16,threads=1 \
+  -m 128G \
+  -object memory-backend-file,id=mem,size=128G,mem-path=/dev/hugepages,share=on \
+  -numa node,memdev=mem \
+  -device cogniforge-vx,id=cvf0,memory=2T,sm_count=256,distrib_nodes=node0:ib0 \
+  -drive file=ubuntu2404.qcow2,format=qcow2 \
+  -netdev user,id=net0 -device e1000,netdev=net0 \
+  -vnc :1
