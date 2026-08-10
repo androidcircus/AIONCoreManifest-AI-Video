@@ -1,0 +1,5 @@
+// video_gen.cu
+extern "C" __global__ void diffusion_step(float *image, int w, int h, int t) {
+    int idx = blockIdx.x * blockDim.x + threadIdx.x;
+    if (idx < w * h) image[idx] *= expf(-0.1f * t);
+}
