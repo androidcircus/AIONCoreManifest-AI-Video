@@ -1,0 +1,21 @@
+apiVersion: kubevirt.io/v1
+kind: VirtualMachine
+metadata:
+  name: cogniforge-vm-0
+spec:
+  running: true
+  template:
+    spec:
+      domain:
+        devices:
+          gpus:
+          - deviceName: cogniforge.com/vgpu
+            name: cogniforge-vgpu
+        resources:
+          requests:
+            memory: 128Gi
+            cpu: 16
+      volumes:
+      - containerDisk:
+          image: cogniforge/ubuntu2404-cuda:latest
+        name: system
