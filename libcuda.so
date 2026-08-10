@@ -1,0 +1,1 @@
+python3 gen_video.py --model DiT-XL/2 --resolution 7680x4320 --steps 100 --output masterpiece.mp4
