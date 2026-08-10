@@ -1,0 +1,17 @@
+[Unit]
+Description=CogniForge Virtual API Inference Server
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/cogniforge/inference-server
+ExecStart=/usr/bin/python3 -m uvicorn virtual_api:app --host 0.0.0.0 --port 8000 --workers 1
+Restart=always
+RestartSec=10
+Environment=COGNIFORGE_MODEL=cogniforge/videogen-xl
+Environment=OUTPUT_DIR=/mnt/virtual_vram/outputs
+Environment=ALLOWED_ORIGINS=*
+Environment=MAX_DURATION_MINUTES=30
+
+[Install]
+WantedBy=multi-user.target
