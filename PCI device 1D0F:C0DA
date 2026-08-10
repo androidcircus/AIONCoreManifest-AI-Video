@@ -1,3 +1,0 @@
-pci 0000:00:04.0: [1d0f:c0da] type 00 class 0x030000
-pci 0000:00:04.0: BAR 0: [mem 0x80000000-0x83ffffff] (MMIO)
-pci 0000:00:04.0: BAR 4: [mem 0x20000000000-0x3ffffffffff 64bit pref] (VRAM)

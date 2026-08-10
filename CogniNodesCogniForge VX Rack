@@ -1,1 +1,0 @@
-python3 pimaster_gateway.py --api-key pim_live_abc123xyz --gpu-count 100

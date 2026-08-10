@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: cogniforge-device-plugin
+  namespace: kube-system
+spec:
+  selector:
+    matchLabels:
+      name: cogniforge-device-plugin
+  template:
+    metadata:
+      labels:
+        name: cogniforge-device-plugin
+    spec:
+      hostNetwork: true
+      containers:
+      - name: device-plugin
+        image: cogniforge/device-plugin:v1.0
+        args: ["--resource-name=cogniforge.com/vgpu", "--count=10"]
+        volumeMounts:
+        - name: device-plugin
+          mountPath: /var/lib/kubelet/device-plugins
+        - name: qemu-socket
+          mountPath: /var/run/cogniforge
+      volumes:
+      - name: device-plugin
+        hostPath:
+          path: /var/lib/kubelet/device-plugins
+      - name: qemu-socket
+        hostPath:
+          path: /var/run/cogniforge

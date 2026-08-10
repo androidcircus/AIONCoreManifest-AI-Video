@@ -1,3 +1,0 @@
-sudo insmod cogniforge.ko
-ls /dev/dri/renderD128   # appears
-export LD_PRELOAD=/opt/cogniforge/libcuda.so

@@ -1,4 +1,0 @@
-model = torch.load("DiT-XL-2.pth").cuda()
-latents = torch.randn(1, 4, 960, 540, device="cuda")  # 8K latent
-for t in tqdm(scheduler.timesteps):
-    latents = model(latents, t)

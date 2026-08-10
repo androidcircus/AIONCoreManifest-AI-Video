@@ -1,3 +1,0 @@
-cd AIONCoreManifest-AI-Video/qemu-device
-make -j$(nproc)
-sudo modprobe cogniforge-vx
