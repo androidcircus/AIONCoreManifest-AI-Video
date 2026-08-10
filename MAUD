@@ -1,0 +1,2 @@
+clang -x cuda --cuda-gpu-arch=sm_80 -emit-llvm -c video_gen.cu -o video_gen.bc
+./pisa_compiler video_gen.bc -o diffusion_step.maud
