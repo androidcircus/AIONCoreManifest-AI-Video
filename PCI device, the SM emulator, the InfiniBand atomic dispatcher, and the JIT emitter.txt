@@ -1,0 +1,7 @@
+feat: initialize CogniForge VX — world’s first virtual super‑GPU emulator
+
+- QEMU PCIe device exposing 2 TB VRAM, 256 SMs
+- Warp‑level SM emulator executing MIT MIAOW MAUD ISA
+- InfiniBand RDMA atomicAdd for distributed global memory
+- JIT backend emitting AVX‑512 BF16 tensor kernels for AMD Genoa
+- Rack blueprint for 10‑node CogniMesh cluster
