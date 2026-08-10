@@ -1,0 +1,3 @@
+curl -X POST http://rack-ip:8000/v1/video/generate \
+  -H "Content-Type: application/json" \
+  -d '{"prompt": "a cinematic drone shot of a futuristic city at sunset", "resolution": "7680x4320", "duration": 10}'
